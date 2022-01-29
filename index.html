@@ -69,8 +69,7 @@
 		
 </body>
 <script type="text/javascript">
- let lats = position.coords.latitude;
-     let longit = position.coords.longitude;
+
 	let d = new Date();
     let date = d.getDate() + " ";
     let year = d.getFullYear() + ",";
@@ -102,6 +101,8 @@ camera_button.addEventListener('click', async function() {
 });
 
 click_button.addEventListener('click', function() {
+	 let lats = position.coords.latitude;
+     let longit = position.coords.longitude;
 	getLocation();
    	canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
    	let image_data_url = canvas.toDataURL('image/jpeg');
