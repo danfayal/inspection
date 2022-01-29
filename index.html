@@ -89,8 +89,7 @@ let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d") ;
 let link = document.createElement('a');	
 let x = document.getElementById("demo");
-   let lats = latitude;
-     let longit = longitude;  
+   
 let img = new Image();
 
 
@@ -141,8 +140,8 @@ function getLocation() {
   }
 }	
 function showPosition(position) {
- // x.innerHTML = "Latitude: " + position.coords.latitude + 
-  //"<br>Longitude: " + position.coords.longitude;
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
 }	
 	
 	
