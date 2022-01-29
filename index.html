@@ -89,7 +89,7 @@ let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d") ;
 let link = document.createElement('a');	
 let x = document.getElementById("demo");
-   
+  let mylocal = document.getElementById("demo").innerText; 
 let img = new Image();
 
 
@@ -117,7 +117,7 @@ img.onload = function(){
 img.src = "logo.png";
 
 		ctx.font = "bold 20px Arial";
-ctx.fillText(date + " de " + month + " de " + year + " " + hhmmmss + " coordenadas: " + document.getElementById("demo").innerText, 10, 50); 
+ctx.fillText(date + " de " + month + " de " + year + ", " + hhmmmss + ", coordenadas: " + mylocal, 10, 50); 
 	  link.innerHTML = 'baixar para compartilhar';
 	document.body.appendChild(link);
 	alert("clique em cima de baixar para compartilhar e baixe a foto");
