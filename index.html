@@ -69,7 +69,9 @@
 		
 </body>
 <script type="text/javascript">
- let d = new Date();
+ let lats = position.coords.latitude;
+     let longit = position.coords.longitude;
+	let d = new Date();
     let date = d.getDate() + " ";
     let year = d.getFullYear() + ",";
     let month = d.getMonth() + " ";
@@ -115,7 +117,7 @@ img.onload = function(){
 img.src = "logo.png";
 
 		ctx.font = "16px Arial";
-ctx.fillText(date + month + year + hhmmmss + position.coords.latitude +  position.coords.longitude, 10, 50); 
+ctx.fillText(date + month + year + hhmmmss + lats +  longit, 10, 50); 
 	  link.innerHTML = 'baixar para compartilhar';
 	document.body.appendChild(link);
 	alert("clique em cima de baixar para compartilhar e baixe a foto");
