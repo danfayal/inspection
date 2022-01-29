@@ -7,7 +7,7 @@
 	.btngroup button {
    background-color: #FCC302;
 		 border: 1px solid red; /* Green border */
-  color: black; /* White text */
+  color: black; /* black text */
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   width: 50%; /* Set a width if needed */
@@ -22,6 +22,21 @@
 .btngroup button:hover {
   background-color: #3e8e41;
 }	
+	
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* limpa floats dos containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}	
+	
+	
 
 </style>
 		
@@ -32,12 +47,15 @@
 <body>
    
 
-	 <div>
-	<video id="video" width="480" height="400" autoplay></video>
+	<div class="row">
+		 <div class="column">
+	<video id="video" width="480" height="400" style="width:100%" autoplay></video>
 		   </div>
-		  <div>
-        <canvas id="canvas" width="480" height="400"></canvas> 
+		
+			   <div class="column">
+        <canvas id="canvas" width="480" height="400" style="width:100%"></canvas> 
 		  </div>
+		</div>
 			  <div class ="btngroup">
 	<button "  id="start-camera" >Habilitar Câmera</button><br>
            
