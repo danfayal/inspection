@@ -61,6 +61,12 @@
            
 				  <button  id="click-photo">Tire a foto</button><br>
 		                              </div>
+		
+		<div class="parag">
+			<p id="demo"></p>
+		</div>
+		
+		
 </body>
 <script type="text/javascript">
  let d = new Date();
@@ -81,7 +87,7 @@ let click_button = document.querySelector("#click-photo");
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d") ;
 let link = document.createElement('a');	
-
+let x = document.getElementById("demo");
     
 let img = new Image();
 
@@ -108,7 +114,7 @@ img.onload = function(){
 img.src = "logo.png";
 
 		ctx.font = "19px Arial";
-ctx.fillText(date+" "+month+", "+year +hhmmmss + " ", 10, 50); 
+ctx.fillText(date+" "+month+", "+year +hhmmmss + " "  + position.coords.latitude + position.coords.longitude, 10, 50); 
 	  link.innerHTML = 'baixar para compartilhar';
 	document.body.appendChild(link);
 	alert("clique em cima de baixar para compartilhar e baixe a foto");
@@ -123,8 +129,17 @@ link.addEventListener('click', function(ev) {
    link.download = "conquistevistoria.png";
 }, false);
 
-	
-	
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+   alert("erro na geolocalização");
+  }
+}	
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}	
 	
 	
 </script>
