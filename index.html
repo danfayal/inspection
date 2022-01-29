@@ -59,6 +59,16 @@ img.src = "logo.png";
 ctx.fillText(date+" "+month+", "+year +hhmmmss + " ", 10, 50); 
 });
 
+let link = document.createElement('a');
+    link.innerHTML = 'download image';
+link.addEventListener('click', function(ev) {
+    link.href = canvas.toDataURL();
+    link.download = "mypainting.png";
+}, false);
+document.body.appendChild(link);	
+	
+	
+	
 </script>
 
 </html>
