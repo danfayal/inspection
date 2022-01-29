@@ -89,7 +89,8 @@ let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d") ;
 let link = document.createElement('a');	
 let x = document.getElementById("demo");
-    
+   let lats = coords.latitude;
+     let longit = coords.longitude;  
 let img = new Image();
 
 
@@ -101,8 +102,7 @@ camera_button.addEventListener('click', async function() {
 });
 
 click_button.addEventListener('click', function() {
-	 let lats = coords.latitude;
-     let longit = coords.longitude;
+	
 	getLocation();
    	canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
    	let image_data_url = canvas.toDataURL('image/jpeg');
