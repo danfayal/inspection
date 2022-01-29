@@ -49,11 +49,11 @@
 
 	<div class="row">
 		 <div class="column">
-	<video id="video" width="480" height="400"  autoplay></video>
+	<video id="video" width="320" height="240"  autoplay></video>
 		   </div>
 		
 			   <div class="column">
-        <canvas id="canvas" width="480" height="400" "></canvas> 
+        <canvas id="canvas" width="640" height="480" "></canvas> 
 		  </div>
 		</div>
 			  <div class ="btngroup">
@@ -117,7 +117,7 @@ img.onload = function(){
 
 img.src = "logo.png";
 let mylocal = x.innerText;
-		ctx.font = "bold 20px Arial";
+		ctx.font = "bold 12px Arial";
 	
 ctx.fillText(date + " de " + month + " de " + year + ", " + hhmmmss + ", coordenadas: " + mylocal, 10, 50); 
 	  link.innerHTML = 'baixar para compartilhar';
@@ -142,8 +142,7 @@ function getLocation() {
   }
 }	
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+  x.innerHTML =  position.coords.latitude + " " + position.coords.longitude;
 }	
 	
 	
