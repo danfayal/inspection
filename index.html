@@ -70,10 +70,10 @@
 </body>
 <script type="text/javascript">
  let d = new Date();
-    let date = d.getDate();
+    let date = d.getDate() + " ";
     let year = d.getFullYear() + ",";
-    let month = d.getMonth();
-	let horas = d.getHours();
+    let month = d.getMonth() + " ";
+	let horas = d.getHours() ;
 let minutos = d.getMinutes();
 let segundos = d.getSeconds();
 let hhmmmss =  " " +[horas, minutos, segundos].join(':');
@@ -114,8 +114,8 @@ img.onload = function(){
 
 img.src = "logo.png";
 
-		ctx.font = "19px Arial";
-ctx.fillText(date+" "+month+", "+year +hhmmmss + " "  + position.coords.latitude + position.coords.longitude, 10, 50); 
+		ctx.font = "16px Arial";
+ctx.fillText(date,month,year, hhmmmss, position.coords.latitude + " ", position.coords.longitude, 10, 50); 
 	  link.innerHTML = 'baixar para compartilhar';
 	document.body.appendChild(link);
 	alert("clique em cima de baixar para compartilhar e baixe a foto");
@@ -138,8 +138,8 @@ function getLocation() {
   }
 }	
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+ // x.innerHTML = "Latitude: " + position.coords.latitude + 
+  //"<br>Longitude: " + position.coords.longitude;
 }	
 	
 	
