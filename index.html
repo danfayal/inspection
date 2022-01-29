@@ -63,7 +63,7 @@
 		                              </div>
 		
 		<div class="parag">
-			<p id="demo">geolocalização</p>
+			<p id="demo"> </p>
 		</div>
 		
 		
@@ -89,7 +89,7 @@ let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d") ;
 let link = document.createElement('a');	
 let x = document.getElementById("demo");
-  let mylocal = x.innerText; 
+   
 let img = new Image();
 
 
@@ -116,8 +116,9 @@ img.onload = function(){
 
 
 img.src = "logo.png";
-
+let mylocal = x.innerText;
 		ctx.font = "bold 20px Arial";
+	
 ctx.fillText(date + " de " + month + " de " + year + ", " + hhmmmss + ", coordenadas: " + mylocal, 10, 50); 
 	  link.innerHTML = 'baixar para compartilhar';
 	document.body.appendChild(link);
