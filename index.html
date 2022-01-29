@@ -71,9 +71,9 @@
 <script type="text/javascript">
 
 	let d = new Date();
-    let date = d.getDate() + " ";
-    let year = d.getFullYear() + ",";
-    let month = d.getMonth() + " ";
+    let date = d.getDate() ;
+    let year = d.getFullYear() ;
+    let month = d.getMonth() ;
 	let horas = d.getHours() ;
 let minutos = d.getMinutes();
 let segundos = d.getSeconds();
@@ -117,7 +117,7 @@ img.onload = function(){
 img.src = "logo.png";
 
 		ctx.font = "16px Arial";
-ctx.fillText(date + month + year + hhmmmss + x.innerHTML, 10, 50); 
+ctx.fillText(date + " " + month + " " + year + " " + hhmmmss + " " + x.innerHTML, 10, 50); 
 	  link.innerHTML = 'baixar para compartilhar';
 	document.body.appendChild(link);
 	alert("clique em cima de baixar para compartilhar e baixe a foto");
