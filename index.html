@@ -30,7 +30,7 @@ let video = document.querySelector("#video");
 let click_button = document.querySelector("#click-photo");
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
-	
+let link = document.createElement('a');	
 
     
 let img = new Image();
@@ -59,12 +59,12 @@ img.src = "logo.png";
 
 		ctx.font = "19px Arial";
 ctx.fillText(date+" "+month+", "+year +hhmmmss + " ", 10, 50); 
-	
+	  link.innerHTML = 'download image';
 });
 
 
-	let link = document.createElement('a');
-    link.innerHTML = 'download image';
+	
+  
 //link.addEventListener('click', function(ev) {
     //link.href = canvas.toDataURL();
   //  link.download = "mypainting.png";
