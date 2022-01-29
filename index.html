@@ -31,7 +31,7 @@ let click_button = document.querySelector("#click-photo");
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
 	
-var link = document.createElement('a');
+
     
 let img = new Image();
 
@@ -61,13 +61,15 @@ img.src = "logo.png";
 ctx.fillText(date+" "+month+", "+year +hhmmmss + " ", 10, 50); 
 	
 });
-link.innerHTML = 'download image';
+
+
+	var link = document.createElement('a');
+    link.innerHTML = 'download image';
 link.addEventListener('click', function(ev) {
-	
     link.href = canvas.toDataURL();
-    link.download = "conquistepic.png";
-	document.body.appendChild(link);
+    link.download = "mypainting.png";
 }, false);
+document.body.appendChild(link);
 	
 	
 	
