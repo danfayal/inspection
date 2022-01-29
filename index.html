@@ -32,7 +32,7 @@ let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
 
 let link = document.createElement('a');
-    link.innerHTML = 'Baixe a foto com a marca dágua para compartilhar';
+    link.innerHTML = 'Baixar';
 let img = new Image();
 
 
@@ -59,13 +59,13 @@ img.src = "logo.png";
 
 		ctx.font = "19px Arial";
 ctx.fillText(date+" "+month+", "+year +hhmmmss + " ", 10, 50); 
-	
+	document.body.appendChild(link);
 });
 
 link.addEventListener('click', function(ev) {
     link.href = canvas.toDataURL();
     link.download = "Conquiste_CheckOut.png";
-	document.body.appendChild(link);
+	
 }, false);
 	
 	
