@@ -14,7 +14,14 @@
   display: block; /* Make the buttons appear below each other */
 }
 
-	
+.btngroup button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btngroup button:hover {
+  background-color: #3e8e41;
+}	
 
 </style>
 		
