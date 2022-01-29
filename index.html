@@ -59,7 +59,7 @@ img.src = "logo.png";
 
 		ctx.font = "19px Arial";
 ctx.fillText(date+" "+month+", "+year +hhmmmss + " ", 10, 50); 
-	  link.innerHTML = 'download image';
+	  link.innerHTML = 'baixar para compartilhar';
 	document.body.appendChild(link);
 	alert(link);
 });
@@ -67,10 +67,10 @@ ctx.fillText(date+" "+month+", "+year +hhmmmss + " ", 10, 50);
 
 	
   
-//link.addEventListener('click', function(ev) {
-    //link.href = canvas.toDataURL();
-  //  link.download = "mypainting.png";
-//}, false);
+link.addEventListener('click', function(ev) {
+    link.href = canvas.toDataURL();
+   link.download = "conquistevistoria.png";
+}, false);
 
 	
 	
