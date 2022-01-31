@@ -166,24 +166,26 @@ switchcam = true;
 
 }
 function getConstraints() {
-	if(!switchcam){
+	
     constraints = {
+	    if(!switchcam){
         facingMode: { exact: "environment" },
      
         frameRate: { min: 5, max: 8 }
-	   
+	   }
 	    
-    };
-} 	
-	else{
-	 constraints = {
+	 else {
+	
         facingMode: { exact: "user" },
      
         frameRate: { min: 5, max: 8 }
-	    
+	 
+	 
+	}
 	    
     };
-	}
+ 	
+	
     return constraints;
 }	
 	
