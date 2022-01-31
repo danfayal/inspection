@@ -61,7 +61,8 @@
            
 				  <button  id="click-photo">Tire a foto</button><br>
 		                              </div>
-		
+		 <button  id="mudacam"> Mudar câmera</button><br>
+		                              </div>
 		<div class="parag">
 			<p id="demo"> </p>
 		</div>
@@ -69,7 +70,9 @@
 		
 </body>
 <script type="text/javascript">
-
+let capture;
+let switchFlag = false;
+let switchBtn;
 	let d = new Date();
     let date = d.getDate() ;
     let year = d.getFullYear() ;
@@ -144,6 +147,67 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML =  position.coords.latitude + " " + position.coords.longitude;
 }	
+
+var options = {
+     video: {
+        
+         facingMode: {
+          exact: "user"
+        }
+     }
+   };
+
+function setup() {
+ // createCanvas(390, 240);
+  
+  capture = createCapture(options);
+  
+  switchBtn = createButton('Switch Camera');
+  switchBtn.position(19, 19);
+  switchBtn.mousePressed(switchCamera);
+}
+
+function switchCamera()
+{
+  switchFlag = !switchFlag;
+  stopCapture();
+  if(switchFlag==true)
+  {
+   capture.remove();
+   options = {
+     video: {
+         facingMode: {
+          exact: "environment"
+        }
+     }
+   };
+
+  }
+  else
+  {
+   capture.remove();
+   options = {
+     video: {
+         facingMode: {
+          exact: "user"
+        }
+     }
+   };
+  }
+  capture = createCapture(options);
+}
+
+function stopCapture() {
+  let stream = capture.elt.srcObject;
+  let tracks = stream.getTracks();
+
+  tracks.forEach(function(track) {
+    track.stop();
+  });
+
+  capture.elt.srcObject = null;
+}	
+	
 	
 	
 </script>
