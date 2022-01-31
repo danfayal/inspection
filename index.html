@@ -97,7 +97,7 @@ let img = new Image();
 camera_button.addEventListener('click', async function() {
 	getLocation();
 
-   	let stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: getConstraints() });
+   	let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio:true});
 `           
 	video.srcObject = stream;
 
@@ -148,6 +148,11 @@ function showPosition(position) {
   x.innerHTML =  position.coords.latitude + " " + position.coords.longitude;
 }	
 
+
+
+function getConstraints() {
+   
+}	
 	
 	
 	
