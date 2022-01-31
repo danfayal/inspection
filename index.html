@@ -142,19 +142,15 @@ function getLocation() {
   } else { 
    alert("erro na geolocalização");
   }
-}	
+}
+
 function showPosition(position) {
   x.innerHTML =  position.coords.latitude + " " + position.coords.longitude;
 }	
 
 	
 function getConstraints() {
-    constraints = {
-        facingMode: { exact: "environment" },
-        
-        frameRate: { min: 5, max: 8 }
-    };
-    return constraints;
+  
 }	
 	
 </script>
