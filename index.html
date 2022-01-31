@@ -160,12 +160,15 @@ function showPosition(position) {
 function changeCam(){
 if(!switchcam){
 switchcam = true;	
-}else{
-	switchcam = false;
+}
+else{
+switchcam = false;
 }	
-	
 
 }
+
+
+
 function getConstraints() {
 	
     constraints = {
@@ -181,21 +184,7 @@ function getConstraints() {
     return constraints;
 }	
 	
-	
-function getConstraints2() {
-	
-    constraints = {
-	  
-        facingMode: { exact: "user" },
-     
-        frameRate: { min: 5, max: 8 }
-	  
-	    
-    };
- 	
-	
-    return constraints;
-}		
+		
 	
 </script>
 
