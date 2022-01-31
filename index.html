@@ -151,7 +151,7 @@ let options = {
      video: {
         
          facingMode: {
-          exact: "user"
+          exact: "enviroment"
         }
      }
    };
@@ -160,15 +160,16 @@ let options = {
 
 function switchCamera()
 {
+	alert("teste!");
   switchFlag = !switchFlag;
   
-  if(switchFlag==true)
+  if(switchFlag==false)
   {
   
    options = {
      video: {
          facingMode: {
-          exact: "environment"
+          exact: "user"
         }
      }
    };
@@ -180,7 +181,7 @@ function switchCamera()
    options = {
      video: {
          facingMode: {
-          exact: "user"
+          exact: "environment"
         }
      }
    };
