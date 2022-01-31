@@ -96,8 +96,11 @@ let img = new Image();
 
 camera_button.addEventListener('click', async function() {
 	getLocation();
+	if(!switchcam){
    	let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });
-
+`              }else { 
+let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints2(), audio: false });
+}
 	video.srcObject = stream;
 
 });
@@ -168,20 +171,11 @@ switchcam = true;
 function getConstraints() {
 	
     constraints = {
-	    if(!switchcam){
+	  
         facingMode: { exact: "environment" },
      
         frameRate: { min: 5, max: 8 }
-	   }
-	    
-	 else {
-	
-        facingMode: { exact: "user" },
-     
-        frameRate: { min: 5, max: 8 }
-	 
-	 
-	}
+	  
 	    
     };
  	
@@ -189,6 +183,21 @@ function getConstraints() {
     return constraints;
 }	
 	
+	
+function getConstraints2() {
+	
+    constraints = {
+	  
+        facingMode: { exact: "user" },
+     
+        frameRate: { min: 5, max: 8 }
+	  
+	    
+    };
+ 	
+	
+    return constraints;
+}		
 	
 </script>
 
