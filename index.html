@@ -69,43 +69,36 @@
 		
 		
 </body>
-<script type="text/javascript">
 
-	let d = new Date();
-    let date = d.getDate() ;
-    let year = d.getFullYear() ;
-    let month = d.getMonth() ;
-	let horas = d.getHours() ;
+	<script type="text/javascript">
+let d = new Date();
+let date = d.getDate();
+let year = d.getFullYear();
+let month = d.getMonth();
+let horas = d.getHours();
 let minutos = d.getMinutes();
 let segundos = d.getSeconds();
 let hhmmmss =  [horas, minutos, segundos].join(':');
-	
-    let monthArr = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro","Dezembro"];
-    month = monthArr[month];
-
-   let camera_button = document.querySelector("#start-camera");
+let monthArr = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro","Dezembro"];
+month = monthArr[month];
+let camera_button = document.querySelector("#start-camera");
 let video = document.querySelector("#video");
 let click_button = document.querySelector("#click-photo");
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d") ;
 let link = document.createElement('a');	
 let x = document.getElementById("demo");
-   
 let img = new Image();
 
 
 camera_button.addEventListener('click', async function() {
-	getLocation();
-
-   	let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio:true});
-`           
-	video.srcObject = stream;
+getLocation();
+let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+video.srcObject = stream;
 
 });
 
 click_button.addEventListener('click', function() {
-	
-	
    	canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
    	let image_data_url = canvas.toDataURL('image/jpeg');
 
@@ -147,7 +140,6 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML =  position.coords.latitude + " " + position.coords.longitude;
 }	
-
 
 </script>
 
