@@ -61,7 +61,7 @@
            
 				  <button  id="click-photo">Tire a foto</button><br>
 		                              
-		 <button  id="mudacam"> Mudar câmera</button><br>
+		 <button  id="mudacam" onclick ="changeCam()"> Mudar câmera</button><br>
 		                              </div>
 		<div class="parag">
 			<p id="demo"> </p>
@@ -70,7 +70,7 @@
 		
 </body>
 <script type="text/javascript">
-let front = false;
+let switchcam = false;
 	let d = new Date();
     let date = d.getDate() ;
     let year = d.getFullYear() ;
@@ -156,13 +156,33 @@ function showPosition(position) {
    // }
   //});
 
+function changeCam(){
+if(!switchcam){
+switchcam = true;	
+}else{
+	switchcam = false;
+}	
+	
 
+}
 function getConstraints() {
+	if(!switchcam){
     constraints = {
         facingMode: { exact: "environment" },
-        
+     
         frameRate: { min: 5, max: 8 }
+	}    
+	    
     };
+	else{
+	 constraints = {
+        facingMode: { exact: "user" },
+     
+        frameRate: { min: 5, max: 8 }
+	}    
+	    
+    };
+	}
     return constraints;
 }	
 	
