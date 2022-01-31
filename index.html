@@ -96,9 +96,9 @@ let img = new Image();
 
 camera_button.addEventListener('click', async function() {
 	getLocation();
-	if(!switchcam){
+
    	let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });
-`           }
+`           
 	video.srcObject = stream;
 
 });
