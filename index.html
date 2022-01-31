@@ -61,7 +61,7 @@
            
 				  <button  id="click-photo">Tire a foto</button><br>
 		                              
-		 <button  id="mudacam" onclick = "switchCamera()"> Mudar câmera</button><br>
+		 <button  id="mudacam"> Mudar câmera</button><br>
 		                              </div>
 		<div class="parag">
 			<p id="demo"> </p>
@@ -70,9 +70,7 @@
 		
 </body>
 <script type="text/javascript">
-let capture;
-let switchFlag = false;
-let switchBtn;
+let front = false;
 	let d = new Date();
     let date = d.getDate() ;
     let year = d.getFullYear() ;
@@ -147,49 +145,12 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML =  position.coords.latitude + " " + position.coords.longitude;
 }	
-let options = {
-     video: {
-        
-         facingMode: {
-          exact: "enviroment"
-        }
-     }
-   };
+
+	document.getElementById('mudacam').onclick = function() { front = !front; };
+	let constraints = { video: { facingMode: (front? "user" : "environment") } };
 
 
 
-function switchCamera()
-{
-	alert("teste!");
-  switchFlag = !switchFlag;
-  
-  if(switchFlag==false)
-  {
-  
-   options = {
-     video: {
-         facingMode: {
-          exact: "user"
-        }
-     }
-   };
-
-  }
-  else
-  {
-   
-   options = {
-     video: {
-         facingMode: {
-          exact: "environment"
-        }
-     }
-   };
-  }
- 
-}
-
-	
 	
 	
 </script>
