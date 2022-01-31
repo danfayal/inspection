@@ -94,8 +94,8 @@ let img = new Image();
 
 camera_button.addEventListener('click', async function() {
 getLocation();
-if(camchange ===true){let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });} 
-	else{let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });}
+if(camchange === true){let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });} 
+	else{let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints2(), audio: false });}
 video.srcObject = stream;
 
 });
