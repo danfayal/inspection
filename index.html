@@ -147,8 +147,7 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML =  position.coords.latitude + " " + position.coords.longitude;
 }	
-
-var options = {
+let options = {
      video: {
         
          facingMode: {
@@ -165,7 +164,7 @@ function switchCamera()
   
   if(switchFlag==true)
   {
-   capture.remove();
+  
    options = {
      video: {
          facingMode: {
@@ -177,7 +176,7 @@ function switchCamera()
   }
   else
   {
-   capture.remove();
+   
    options = {
      video: {
          facingMode: {
