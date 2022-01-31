@@ -71,6 +71,7 @@
 </body>
 
 	<script type="text/javascript">
+let camchange = false;		
 let d = new Date();
 let date = d.getDate();
 let year = d.getFullYear();
@@ -93,7 +94,8 @@ let img = new Image();
 
 camera_button.addEventListener('click', async function() {
 getLocation();
-let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });
+if(camchange ===true){let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });} 
+	else{let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });}
 video.srcObject = stream;
 
 });
@@ -151,6 +153,27 @@ function getConstraints() {
     };
     return constraints;
 }			
+
+		
+		
+function getConstraints2() {
+    constraints = {
+        facingMode: { exact: "user" },
+        
+        frameRate: { min: 5, max: 8 }
+    };
+    return constraints;
+}		
+	
+		
+		
+function changeCam() {
+if(camchange===true){
+camchange = false;
+} else {
+camchange = true;
+}
+}		
 		
 		
 </script>
