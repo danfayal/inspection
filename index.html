@@ -106,10 +106,9 @@ let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints()
 		
 camera_button.addEventListener('click', async function() {
 
-if(!changecam){frontCam(); 
-	      } 
+if(!camchange){frontCam(); alert("Câmera Frontal habilitada.");      } 
 	else{
-		backCam(); }
+		backCam(); alert("Câmera Traseira habilitada."); }
 
 });
 
@@ -181,9 +180,8 @@ function getConstraints2() {
 		
 		
 function changeCam() {
-if(camchange===false){
 ("Câmera Traseira habilitada.");
-}
+
 }		
 		
 		
