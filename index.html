@@ -91,12 +91,25 @@ let link = document.createElement('a');
 let x = document.getElementById("demo");
 let img = new Image();
 
+function frontCam() {
+	getLocation();
+let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints2(), audio: false });
+	video.srcObject = stream;
+}
+		
 
+function backCam() {
+	getLocation();
+let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });
+	video.srcObject = stream;
+}
+		
 camera_button.addEventListener('click', async function() {
-getLocation();
-if(camchange === true){let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });} 
-	else{let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints2(), audio: false });}
-video.srcObject = stream;
+
+if(!changecam){frontCam();
+	      } 
+	else{
+		backCam();}
 
 });
 
