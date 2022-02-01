@@ -180,7 +180,7 @@ function getConstraints2() {
 		
 		
 function changeCam() {
-	if(!camchange){frontCam(); alert("Câmera Frontal habilitada."); } else{ backCam(); alert("Câmera Traseira habilitada."); }
+	if(!camchange){frontCam(); alert("Câmera Frontal habilitada."); camchange = true; } else{ backCam(); alert("Câmera Traseira habilitada."); camchange = false; }
 
 }		
 		
