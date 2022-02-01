@@ -61,7 +61,7 @@
            
 				  <button  id="click-photo">Tire a foto</button><br>
 		                              
-		 <button  id="mudacam" onclick ="changeCam()"> Mudar câmera</button><br>
+		 <button  id="mudacam" onclick = "changeCam()"> Mudar câmera</button><br>
 		                              </div>
 		<div class="parag">
 			<p id="demo"> </p>
@@ -106,10 +106,10 @@ let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints()
 		
 camera_button.addEventListener('click', async function() {
 
-if(!changecam){frontCam(); alert("Câmera da Frente habilitada.");
+if(!changecam){frontCam(); 
 	      } 
 	else{
-		backCam(); alert("Câmera Traseira habilitada.");}
+		backCam(); }
 
 });
 
@@ -183,8 +183,10 @@ function getConstraints2() {
 function changeCam() {
 if(camchange===true){
 camchange = false;
+alert("Câmera Frontal habilitada.");	
 } else {
 camchange = true;
+alert("Câmera Traseira habilitada.");	
 }
 }		
 		
