@@ -104,10 +104,10 @@ function backCam() {
 		
 camera_button.addEventListener('click', async function() {
 
-if(!camchange){let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints2(), audio: false });
+if(!camchange){let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });
 	video.srcObject = stream;   } 
 	else{
-		let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });
+		let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints2(), audio: false });
 	video.srcObject = stream; }
 
 });
