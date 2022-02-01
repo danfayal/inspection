@@ -93,22 +93,22 @@ let img = new Image();
 
 function frontCam() {
 	getLocation();
-let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints2(), audio: false });
-	video.srcObject = stream;
+
 }
 		
 
 function backCam() {
 	getLocation();
-let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });
-	video.srcObject = stream;
+
 }
 		
 camera_button.addEventListener('click', async function() {
 
-if(!camchange){frontCam(); alert("Câmera Frontal habilitada.");      } 
+if(!camchange){let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });
+	video.srcObject = stream;   } 
 	else{
-		backCam(); alert("Câmera Traseira habilitada."); }
+		let stream = await navigator.mediaDevices.getUserMedia({ video: getConstraints(), audio: false });
+	video.srcObject = stream; }
 
 });
 
@@ -180,7 +180,7 @@ function getConstraints2() {
 		
 		
 function changeCam() {
-("Função sendo chamada.");
+	if(!camchange){frontCam(); alert("Câmera Frontal habilitada."); } else{ backCam(); alert("Câmera Traseira habilitada."); }
 
 }		
 		
